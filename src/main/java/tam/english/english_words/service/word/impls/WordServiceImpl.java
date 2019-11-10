@@ -65,14 +65,14 @@ public class WordServiceImpl implements IWordService {
     @Override
     public boolean findUaWord(Word word, String uaWord) {
         for (String item: word.getUaWord()){
-            if(item.equals(uaWord)){ return true;}
+            if(item.toLowerCase().equals(uaWord.toLowerCase())){ return true;}
         }
         return false;
     }
 
     @Override
     public boolean findEnWord(Word word, String enWord) {
-    if(word.getEnWord().equals(enWord)) {
+    if(word.getEnWord().toLowerCase().equals(enWord.toLowerCase())) {
         return true;
     }
     else {
