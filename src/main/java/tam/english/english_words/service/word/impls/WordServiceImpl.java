@@ -35,7 +35,7 @@ public class WordServiceImpl implements IWordService {
             List<String> list = wordSearch.getUaWord();
             for (String item : wordSearch.getUaWord()) {
                 for (String items :word.getUaWord()) {
-                    if (item.equals(items)) {
+                    if (item.toLowerCase().equals(items.toLowerCase())) {
                         return null;
                     }
                 }
