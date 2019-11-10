@@ -29,7 +29,25 @@ public class WordServiceImpl implements IWordService {
 
     @Override
     public Word create(Word word) {
-        return wordRepository.save(word);
+        Word newWord;
+        Word wordSearch = wordRepository.findWordByEnWord(word.getEnWord());
+        if(wordSearch != null){
+            List<String> list = wordSearch.getUaWord();
+            for (String item : wordSearch.getUaWord()) {
+                for (String items :word.getUaWord()) {
+                    if (item.equals(items)) {
+                        return null;
+                    }
+                }
+            }
+            list.addAll(word.getUaWord());
+            newWord = new Word(word.getEnWord(),list);
+            newWord.setId(wordSearch.getId());
+        }
+        else{
+            newWord = word;
+        }
+        return wordRepository.save(newWord);
     }
 
     @Override

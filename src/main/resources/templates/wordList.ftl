@@ -18,6 +18,8 @@
                 <tr class="bg-success">
                     <th>English</th>
                     <th>Ukrainian</th>
+                    <th>Delete</th>
+                    <th>Update</th>
                 </tr>
                 <#list Words as word>
                     <#assign uaWord = "">
@@ -33,6 +35,8 @@
                     <tr>
                         <td>${word.enWord}</td>
                         <td>${uaWord}</td>
+                        <td><a href="/delete/${word.id}" Type="Button" class="btn btn-danger" >Delete</a></td>
+                        <td><a href="/update/${word.id}" Type="Button" class="btn btn-primary" >Update</a></td>
                     </tr>
 
                 </#list>

@@ -6,4 +6,6 @@ import tam.english.english_words.model.Word;
 
 @Repository
 public interface WordRepository extends MongoRepository <Word, String> {
+    boolean findByEnWord(String enWord);
+    Word findWordByEnWord(String enWord);
 }
