@@ -11,7 +11,7 @@
 <div class="container">
     <br>
     <br>
-            <input type="text" id="myInput" onkeyup="myFunction(1)" placeholder="Search word...">
+            <input type="text" id="myInput" onkeyup="myFunction(0)" placeholder="Search word...">
     <br>
     <br>
     <table class="table table-sm table-striped table-bordered table-dark" id="myTable">
